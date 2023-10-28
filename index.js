@@ -31,6 +31,7 @@ const questions = [
 ];
 
 function writeToFile(fileName, data) {
+    const shape = new shape ();
   fs.writeFile(fileName, data, function (err) {
     console.log(fileName);
     console.log(data);
@@ -44,7 +45,7 @@ function writeToFile(fileName, data) {
 
 function init() {
   inquirer.prompt(questions).then(function (data) {
-    writeToFile("newLogo.js", shape(data));
+    writeToFile("newLogo.js", shape());
     console.log(data);
   });
 }

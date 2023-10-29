@@ -3,6 +3,7 @@ const fs = require("fs");
 const shape = require("./lib/shape");
 const shapeOpt = require("./lib/shapeOpt");
 const colorKeywords = require("./lib/colors");
+const fileName = "./examples/newLogo.svg"
 
 const questions = [
   {
@@ -29,24 +30,34 @@ const questions = [
     name: "text",
   },
 ];
-
-function writeToFile(fileName, data) {
-    const shape = new shape ();
-  fs.writeFile(fileName, data, function (err) {
-    console.log(fileName);
-    console.log(data);
-    if (err) {
-      return console.log(err);
-    } else {
-      console.log("Check out your new logo!");
-    }
-  });
+function newLogo(response){
+    const svg = shapeOpt(response);
+    fs.writeFile(fileName, svg, () => console.log("create newLogo.svg"))
 }
+
+// function writeToFile(fileName, data) {
+//     const shape = new shape ();
+//   fs.writeFile(fileName, data, function (err) {
+//     console.log(fileName);
+//     console.log(data);
+//     if (err) {
+//       return console.log(err);
+//     } else {
+//       console.log("Check out your new logo!");
+//     }
+//   });
+// }
 
 function init() {
-  inquirer.prompt(questions).then(function (data) {
-    writeToFile("newLogo.js", shape());
-    console.log(data);
+  inquirer.prompt(questions).then((response) => {
+    newLogo(response);
+  }) 
+  .catch(err => {
+    console.log(err)
+
+    // writeToFile("newLogo.svg", shape());
+    // console.log(data);
   });
 }
+
 init();

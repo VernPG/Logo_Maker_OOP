@@ -2,7 +2,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const shape = require("./lib/shape");
 const shapeOpt = require("./lib/shapeOpt");
-const colorKeywords = require("./lib/colors");
+const colors = require("./lib/colors");
 const fileName = "./examples/newLogo.svg";
 
 const questions = [

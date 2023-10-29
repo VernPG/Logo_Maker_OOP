@@ -44,6 +44,6 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
 
   **[Repo can be found HERE](https://github.com/VernPG/Logo_Maker_OOP.git)
 
-  **[Video of how to generate your own SVG logo maker can be found HERE]()
+  **[Video of how to generate your own SVG logo maker can be found HERE](https://drive.google.com/file/d/1WEEuYdGbDbh4YODETKgoqII12fm9ZMEP/view)
 
 

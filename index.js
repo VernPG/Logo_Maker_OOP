@@ -15,7 +15,7 @@ const questions = [
   {
     type: "input",
     message:
-      "Please enter a color name or hexidecimal of what color would you like the shape to be.",
+      "Please enter a color name or hexidecimal of what color would you like the shape to be.W3 Schools can be referenced for a full list of names.",
     name: "shapeColor",
   },
   {
@@ -26,13 +26,13 @@ const questions = [
   },
   {
     type: "input",
-    message: "Pick no more than three letters to appear in the text",
+    message: "Pick no more than three letters to appear in the text.",
     name: "text",
   },
 ];
 function newLogo(response) {
   const svg = shapeOpt(response);
-  fs.writeFile(fileName, svg, () => console.log("create newLogo.svg"));
+  fs.writeFile(fileName, svg, () => console.log("Check out your new logo in newLogo.svg"));
 }
 
 // function writeToFile(fileName, data) {
@@ -54,9 +54,6 @@ function init() {
     .then((response) => {
       newLogo(response);
     })
-    .catch((err) => {
-      console.log(err);
-    });
 }
 
 init();
